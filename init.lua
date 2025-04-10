@@ -674,6 +674,7 @@ require('lazy').setup({
           require('lspconfig').emmet_language_server.setup {
             filetypes = {
               'php',
+              'html',
             },
           },
         },
@@ -854,7 +855,7 @@ require('lazy').setup({
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
     'scottmckendry/cyberdream.nvim',
-    priority = 1000, -- Make sure to load this before all the other start plugins.
+    -- priority = 1000, -- Make sure to load this before all the other start plugins.
     init = function()
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
@@ -865,6 +866,8 @@ require('lazy').setup({
       vim.cmd.hi 'Comment gui=none'
     end,
   },
+
+  { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
 
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
